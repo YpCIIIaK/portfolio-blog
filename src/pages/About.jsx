@@ -3,17 +3,17 @@ import { motion } from 'framer-motion';
 const About = () => {
   const skills = [
     'JavaScript (ES6+)',
+    'HTML5+',
     'React',
     'Next.js',
     'Node.js',
     'Tailwind CSS',
+    'CSS3',
     'Redux',
     'Git',
     'REST APIs',
     'GraphQL',
     'Webpack',
-    'Jest',
-    'CI/CD',
   ];
 
   return (
@@ -30,7 +30,7 @@ const About = () => {
               <p className="mb-4">
                 Hello! I'm Vladimir, a frontend developer with a passion for creating
                 beautiful and functional web applications. My journey in web development
-                began during my university years, and I've been hooked ever since.
+                began during my school years, and I've been hooked ever since.
               </p>
               <p className="mb-4">
                 I specialize in React and its ecosystem, building responsive and
@@ -38,8 +38,7 @@ const About = () => {
                 and staying up-to-date with the latest web technologies.
               </p>
               <p className="mb-4">
-                When I'm not coding, you can find me contributing to open-source
-                projects, writing technical blog posts, or exploring new technologies.
+                When I'm not coding, im still learning new things in development field.
               </p>
             </div>
             <div>

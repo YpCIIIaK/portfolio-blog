@@ -26,6 +26,14 @@ const Projects = () => {
       github: 'https://github.com/YpCIIIaK/BlogWebsite',
       demo: 'https://github.com/YpCIIIaK/BlogWebsite',
       image: '/projects/weather.jpg'
+    },
+    {
+      title: 'To-do List',
+      description: 'A todo website for creating tasks marked with date, priority, description and category',
+      tech: ['React', 'JavaScript', 'API Integration'],
+      github: 'https://github.com/YpCIIIaK/todoList',
+      demo: 'https://github.com/YpCIIIaK/todoList',
+      image: '/projects/weather.jpg'
     }
   ];
 

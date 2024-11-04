@@ -10,7 +10,7 @@ const Footer = () => {
           </div>
           <div className="flex gap-6">
             <a
-              href="https://github.com/vladimirov"
+              href="https://github.com/YpCIIIaK"
               target="_blank"
               rel="noopener noreferrer"
               className="text-textSecondary hover:text-secondary transition-colors"
@@ -18,7 +18,7 @@ const Footer = () => {
               <FaGithub size={24} />
             </a>
             <a
-              href="https://linkedin.com/in/vladimirov"
+              href="https://github.com/YpCIIIaK"
               target="_blank"
               rel="noopener noreferrer"
               className="text-textSecondary hover:text-secondary transition-colors"
@@ -26,7 +26,7 @@ const Footer = () => {
               <FaLinkedin size={24} />
             </a>
             <a
-              href="https://t.me/vladimirov"
+              href="https://t.me/bigboyvova"
               target="_blank"
               rel="noopener noreferrer"
               className="text-textSecondary hover:text-secondary transition-colors"
