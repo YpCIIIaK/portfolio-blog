@@ -18,14 +18,6 @@ const Footer = () => {
               <FaGithub size={24} />
             </a>
             <a
-              href="https://github.com/YpCIIIaK"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-textSecondary hover:text-secondary transition-colors"
-            >
-              <FaLinkedin size={24} />
-            </a>
-            <a
               href="https://t.me/bigboyvova"
               target="_blank"
               rel="noopener noreferrer"
