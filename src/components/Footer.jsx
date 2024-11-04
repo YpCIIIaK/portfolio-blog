@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaTelegram } from 'react-icons/fa';
+import { FaGithub, FaTelegram } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -33,3 +33,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
