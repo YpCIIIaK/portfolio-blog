@@ -56,6 +56,10 @@ const About = () => {
               </div>
             </div>
           </div>
+
+          <div>
+            CV
+          </div>
         </motion.div>
       </div>
     </div>

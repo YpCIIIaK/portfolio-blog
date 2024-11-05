@@ -22,6 +22,7 @@ function App() {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/components" element={<Components />}>
+            <Route index element={<Navigate to="button-link" />} />
             <Route path=":componentId" element={<Component />} />
           </Route>
           <Route path="/contact" element={<Contact />} />
