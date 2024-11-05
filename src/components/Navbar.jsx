@@ -17,7 +17,7 @@ const Navbar = () => {
     <nav className="fixed w-full h-20 bg-primary z-50">
       <div className="flex justify-between items-center max-w-7xl mx-auto px-4 h-full">
         <Link to="/" className="text-2xl font-bold text-secondary">
-          VV
+          VVV
         </Link>
 
         {/* Desktop Menu */}
