@@ -1,7 +1,9 @@
-import ButtonLink from "./ButtonLink.jsx";
-import Button from "./Button.jsx";
+import ButtonLink from "../components/ButtonLink.jsx";
+import Button from "../components/Button.jsx";
 import exblogpost from "../assets/exblogpost.png";
-import ExampleLink from "./ExampleLink.jsx";
+import ExampleLink from "../components/ExampleLink.jsx";
+import et from "../assets/et.png"
+import ExampleTabs from "../components/ExampleTabs.jsx";
 
 export const componentsPages = [
     {
@@ -159,5 +161,65 @@ slug: 'understanding-react-hooks',
         `,
         render: ExampleLink
     },
+    {
+        link: 'tabs',
+        title: 'Tabs',
+        content: `
 
+This Tabs component in React displays a set of tabs with customizable styles and dynamic content. Here’s a breakdown of its functionality:
+
+## Props:
+
+    >   tabs: An array of objects, each representing a tab. Each object should have name (unique identifier),
+        label (display text), and content (content to render when active).
+    >   activeTab: A string representing the currently selected tab.
+    >   onTabChange: A function that is called when a tab is clicked, used to update the activeTab.
+    >   styleType: Optional; controls the style of the tabs. Defaults to "primary".
+
+## Code Example
+
+\`\`\`jsx
+import React from 'react';
+
+const Tabs = ({ tabs, activeTab, onTabChange, styleType = 'primary' }) => {
+    const baseStyles = 'flex mb-4';
+    const tabStyles = \`mr-1 py-2 px-4 transition-all flex items-center justify-center w-32 text-center rounded-lg\`;
+
+    const styleTypes = {
+        primary: 'bg-primary text-secondary hover:bg-secondary/10 border border-secondary',
+        secondary: 'bg-secondary text-primary hover:bg-secondary/90',
+        transparent: 'bg-transparent text-secondary border border-secondary hover:bg-secondary/10',
+    };
+
+    return (
+        <div>
+            <div className={baseStyles}>
+                {tabs.map((tab, index) => (
+                    <button
+                        key={index}
+                        onClick={() => onTabChange(tab.name)}
+                        className=*****
+                    >
+                        {tab.label}
+                    </button>
+                ))}
+            </div>
+            <div className="p-4 bg-primary text-textPrimary rounded-lg border border-secondary">
+                {tabs.find(tab => tab.name === activeTab)?.content}
+            </div>
+        </div>
+    );
+};
+
+export default Tabs;
+
+\`\`\`
+
+Insert code down below into ***** place
+
+![example](${et})
+
+        `,
+        render: ExampleTabs
+    },
 ];

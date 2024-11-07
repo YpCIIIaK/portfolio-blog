@@ -9,7 +9,7 @@ const About = () => {
     'Node.js',
     'Tailwind CSS',
     'CSS3',
-    'Redux',
+    'Ngrok',
     'Git',
     'REST APIs',
     'GraphQL',
