@@ -4,6 +4,8 @@ import exblogpost from "../assets/exblogpost.png";
 import ExampleLink from "../components/ExampleLink.jsx";
 import et from "../assets/et.png"
 import ExampleTabs from "../components/ExampleTabs.jsx";
+import ModalExample from "../components/ModalExample.jsx";
+import ExampleTable from "../components/ExampleTable.jsx";
 
 export const componentsPages = [
     {
@@ -166,7 +168,7 @@ slug: 'understanding-react-hooks',
         title: 'Tabs',
         content: `
 
-This Tabs component in React displays a set of tabs with customizable styles and dynamic content. Here’s a breakdown of its functionality:
+This Tabs component in React displays a set of tabs with customizable styles and dynamic content. Here’s a breakdown of its functionality: it accepts some props that can be changed, fro example tabs, activetab and e.t.                                                          
 
 ## Props:
 
@@ -221,5 +223,108 @@ Insert code down below into ***** place
 
         `,
         render: ExampleTabs
+    },
+    {
+        link: 'modal',
+        title: 'Modal',
+        content: `
+
+This component is a reusable modal dialog created using React and Framer Motion. 
+It displays when the isOpen prop is true, and can be closed by clicking the overlay (outside the modal) or
+by pressing the close button (✖). The Modal component accepts children to display its content.
+
+## Code Example
+
+\`\`\`jsx
+import React from 'react';
+import { motion } from 'framer-motion';
+
+const Modal = ({ isOpen, onClose, children }) => {
+    if (!isOpen) return null;
+
+    const handleOverlayClick = (e) => {
+        if (e.target === e.currentTarget) {
+            onClose();
+        }
+    };
+
+    return (
+        <div
+            className="fixed inset-0 flex items-center justify-center bg-primary bg-opacity-80 z-50"
+            onClick={handleOverlayClick}
+        >
+            <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3 }}
+                className="bg-primary text-textPrimary rounded-lg shadow-lg p-6 w-full max-w-md relative"
+            >
+                <button
+                    className="absolute top-2 right-2 text-secondary hover:text-secondary/80 transition-colors"
+                    onClick={onClose}
+                >
+                    ✖
+                </button>
+                {children}
+            </motion.div>
+        </div>
+    );
+};
+
+export default Modal;
+
+\`\`\`
+
+        `,
+        render: ModalExample
+    },
+    {
+        link: 'table',
+        title: 'Table',
+        content: `
+
+This is a self-contained, reusable table component in React. It displays structured data in a table format with header and row styling consistent with a primary color scheme, similar to a modal component's styling.
+
+## Code Example
+
+\`\`\`jsx
+import React from 'react';
+
+const Table = ({ data, columns }) => {
+    const baseStyles = 'min-w-full border border-primary';
+    const headerStyles = 'bg-primary text-textPrimary text-left font-semibold p-4 border-b border-secondary';
+    const rowStyles = 'p-4 border-b border-gray-300 hover:bg-primary/10';
+
+    return (
+        <table className={baseStyles}>
+            <thead>
+                <tr>
+                    {columns.map((column, index) => (
+                        <th key={index} className={headerStyles}>
+                            {column}
+                        </th>
+                    ))}
+                </tr>
+            </thead>
+            <tbody>
+                {data.map((row, rowIndex) => (
+                    <tr key={rowIndex} className={rowStyles}>
+                        {columns.map((column, colIndex) => (
+                            <td key={colIndex} className="p-4 text-textPrimary">
+                                {row[column]}
+                            </td>
+                        ))}
+                    </tr>
+                ))}
+            </tbody>
+        </table>
+    );
+};
+
+export default Table;
+
+\`\`\`
+        `,
+        render: ExampleTable
     },
 ];
