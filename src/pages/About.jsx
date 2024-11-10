@@ -40,6 +40,9 @@ const About = () => {
               <p className="mb-4">
                 When I'm not coding, im still learning new things in development field.
               </p>
+              <p className="mb-4">
+                (all of the content and the functions that are displayed here just for showcase and can be enhanced or changed any possible way)
+              </p>
             </div>
             <div>
               <h3 className="text-xl font-bold mb-4">Skills & Technologies</h3>
@@ -57,8 +60,28 @@ const About = () => {
             </div>
           </div>
 
-          <div>
-            CV
+          <div className="mt-10">
+            <h3 className="text-xl font-bold transition-colors mb-2">My CV in PDF Format that you can download</h3>
+            <div>
+              <div>
+                <a
+                    href="../assets/CV%20Vladimirov%20Vladimir.pdf"
+                    download
+                    className="text-md font-bold hover:text-secondary transition-colors"
+                >
+                  Download My CV EN
+                </a>
+              </div>
+              <div>
+                <a
+                    href="../assets/Резюме%20Владимиров%20Владимир.pdf"
+                    download
+                    className="text-md font-bold hover:text-secondary transition-colors"
+                >
+                  Download My CV RU
+                </a>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>
