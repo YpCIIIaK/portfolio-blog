@@ -24,7 +24,6 @@ const Sidebar = () => {
                 className="w-64 bg-primary p-6"
             >
                 <div className="flex flex-col gap-6">
-                    {/* Поле поиска */}
                     <input
                         type="text"
                         placeholder="Search components..."

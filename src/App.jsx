@@ -9,11 +9,13 @@ import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
 import Components from "./pages/Components.jsx";
 import Component from "./components/Component.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 function App() {
   return (
     <Router>
       <div className="bg-primary min-h-screen text-textPrimary">
+        <ScrollToTop />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
