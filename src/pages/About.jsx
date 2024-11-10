@@ -11,9 +11,12 @@ const About = () => {
     'CSS3',
     'Ngrok',
     'Git',
-    'REST APIs',
+    'Chart JS',
     'GraphQL',
     'Webpack',
+    'Google Forms',
+    'Postman',
+    'Excel',
   ];
 
   return (
