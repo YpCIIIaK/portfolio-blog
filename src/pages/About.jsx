@@ -68,8 +68,8 @@ const About = () => {
             <div>
               <div>
                 <a
-                    href="../assets/CV%20Vladimirov%20Vladimir.pdf"
-                    download
+                    href="/assets/CV%20Vladimirov%20Vladimir.pdf"
+                    download="CV_Vladimirov_Vladimir.pdf"
                     className="text-md font-bold hover:text-secondary transition-colors"
                 >
                   Download My CV EN
@@ -77,8 +77,8 @@ const About = () => {
               </div>
               <div>
                 <a
-                    href="../assets/Резюме%20Владимиров%20Владимир.pdf"
-                    download
+                    href="/assets/Резюме%20Владимиров%20Владимир.pdf"
+                    download="Резюме_Владимиров_Владимир.pdf"
                     className="text-md font-bold hover:text-secondary transition-colors"
                 >
                   Download My CV RU
