@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import {AnimatePresence, motion} from 'framer-motion';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +7,7 @@ const Contact = () => {
     email: '',
     message: ''
   });
+  const [showNotification, setShowNotification] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,8 +25,9 @@ const Contact = () => {
       mode: 'no-cors'
     })
         .then(() => {
-          alert('Message sent successfully!');
+          setShowNotification(true);
           setFormData({ name: '', email: '', message: '' });
+          setTimeout(() => setShowNotification(false), 3000);
         })
         .catch((error) => {
           console.error('Error:', error);
@@ -100,6 +102,20 @@ const Contact = () => {
             </form>
           </motion.div>
         </div>
+
+        <AnimatePresence>
+          {showNotification && (
+              <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 20 }}
+                  transition={{ duration: 0.5 }}
+                  className="fixed bottom-4 right-4 bg-secondary text-primary px-6 py-3 rounded shadow-lg"
+              >
+                Message sent successfully!
+              </motion.div>
+          )}
+        </AnimatePresence>
       </div>
   );
 };
