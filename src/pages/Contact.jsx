@@ -54,7 +54,7 @@ const Contact = () => {
             <p className="text-textSecondary mb-8">
               I'm currently open for freelance opportunities and interesting projects.
               Whether you have a question or just want to say hi, I'll try my best
-              to get back to you!
+              to get back to you! (Just fill the form and press the button below)
             </p>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>

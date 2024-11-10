@@ -44,7 +44,7 @@ const About = () => {
                 When I'm not coding, im still learning new things in development field.
               </p>
               <p className="mb-4">
-                (all of the content and the functions that are displayed here just for showcase and can be enhanced or changed any possible way)
+                (all of the content and the functions that are displayed here just for showcase and can be enhanced or changed in any possible way)
               </p>
             </div>
             <div>
