@@ -5,7 +5,6 @@ const About = () => {
     'JavaScript (ES6+)',
     'HTML5+',
     'React',
-    'Next.js',
     'Node.js',
     'Tailwind CSS',
     'CSS3',
@@ -43,7 +42,7 @@ const About = () => {
               <p className="mb-4">
                 When I'm not coding, im still learning new things in development field.
               </p>
-              <p className="mb-4">
+              <p className="mb-4 font-bold">
                 (all of the content and the functions that are displayed here just for showcase and can be enhanced or changed in any possible way)
               </p>
             </div>
