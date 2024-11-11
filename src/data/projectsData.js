@@ -8,6 +8,22 @@ export const projectsData = [
         image: '/pw.png'
     },
     {
+        title: 'Mental Health Tracking',
+        description: 'A digital tool that encourages mindfulness and mental wellness by tracking moods, setting goals, and offering positive affirmations.',
+        tech: ['React', 'JavaScript', 'Tailwind CSS'],
+        github: 'https://github.com/YpCIIIaK/MentalHealth-Tracker',
+        demo: 'https://github.com/YpCIIIaK/MentalHealth-Tracker',
+        image: '/mhw.png'
+    },
+    {
+        title: 'Startup Website',
+        description: 'A GreenTech Startup for Environmental Sustainability website showcasing their projects and solutions.',
+        tech: ['React', 'JavaScript', 'Tailwind CSS'],
+        github: 'https://github.com/YpCIIIaK/startup-website',
+        demo: 'https://github.com/YpCIIIaK/startup-website',
+        image: '/stw.png'
+    },
+    {
         title: 'Stocks Analysis Website',
         description: 'Still in development, website for stock full analysis,a lot of graphs, tables, reusable components and e.t.',
         tech: ['React', 'JavaScript', 'Tailwind CSS', 'CSS', 'Graphs'],
