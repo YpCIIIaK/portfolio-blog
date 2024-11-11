@@ -24,6 +24,14 @@ export const projectsData = [
         image: '/stw.png'
     },
     {
+        title: 'This Website LOL',
+        description: 'A all in one portfolio-blog-components website',
+        tech: ['React', 'JavaScript', 'Tailwind CSS', 'CSS', 'Markdown'],
+        github: 'https://github.com/YpCIIIaK/portfolio-blog',
+        demo: 'https://github.com/YpCIIIaK/portfolio-blog',
+        image: '/pb.png'
+    },
+    {
         title: 'Stocks Analysis Website',
         description: 'Still in development, website for stock full analysis,a lot of graphs, tables, reusable components and e.t.',
         tech: ['React', 'JavaScript', 'Tailwind CSS', 'CSS', 'Graphs'],
@@ -46,14 +54,6 @@ export const projectsData = [
         github: 'https://github.com/YpCIIIaK/todoList',
         demo: 'https://github.com/YpCIIIaK/todoList',
         image: '/td.png'
-    },
-    {
-        title: 'This Website LOL',
-        description: 'A all in one portfolio-blog-components website',
-        tech: ['React', 'JavaScript', 'Tailwind CSS', 'CSS', 'Markdown'],
-        github: 'https://github.com/YpCIIIaK/portfolio-blog',
-        demo: 'https://github.com/YpCIIIaK/portfolio-blog',
-        image: '/pb.png'
     },
     {
         title: 'Spendings Tracker',
