@@ -16,6 +16,11 @@ const About = () => {
     'Google Forms',
     'Postman',
     'Excel',
+    'Bootstrap',
+    'Bootstrap React',
+    'Bitbucket',
+    'Docker',
+    'WSL',
   ];
 
   return (

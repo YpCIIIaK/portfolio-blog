@@ -24,6 +24,14 @@ export const projectsData = [
         image: '/stw.png'
     },
     {
+        title: 'Advertisement Website',
+        description: 'An Advertisement website for an mobile app with modern and minimalistic design.',
+        tech: ['React', 'JavaScript', 'Tailwind CSS'],
+        github: 'https://github.com/YpCIIIaK/app-adv',
+        demo: 'https://github.com/YpCIIIaK/app-adv',
+        image: '/aaw.png'
+    },
+    {
         title: 'This Website LOL',
         description: 'A all in one portfolio-blog-components website',
         tech: ['React', 'JavaScript', 'Tailwind CSS', 'CSS', 'Markdown'],
