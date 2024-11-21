@@ -7,7 +7,7 @@ const GitHubStats = () => {
     useEffect(() => {
         const fetchStats = async () => {
             try {
-                const username = "YpCIIIaK"; // Замените на своё имя пользователя
+                const username = "YpCIIIaK";
                 const token = import.meta.env.VITE_GITHUB_TOKEN;
 
                 const profileResponse = await axios.get(

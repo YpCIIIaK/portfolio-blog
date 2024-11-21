@@ -26,6 +26,8 @@ const About = () => {
     'Docker',
     'WSL',
     'MongoDB',
+    'Github API',
+    'Axios',
   ];
 
   const hobbies = [
@@ -132,7 +134,7 @@ const About = () => {
             )}
           </div>
 
-          <div className="mt-16">
+          <div className="mt-10">
             <GitHubStats/>
           </div>
         </motion.div>
