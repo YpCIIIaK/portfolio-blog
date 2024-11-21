@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion';
+import GitHubStats from "../components/GithubStats.jsx";
+import {useState} from "react";
 
 const About = () => {
+  const [hobbiesOpen, setHobbiesOpen] = useState(false);
+
   const skills = [
     'JavaScript (ES6+)',
     'HTML5+',
@@ -21,15 +25,24 @@ const About = () => {
     'Bitbucket',
     'Docker',
     'WSL',
+    'MongoDB',
+  ];
+
+  const hobbies = [
+    "Basketball",
+    "Skiing",
+    "Computer games",
+    "Board games",
+    "Building blocks",
   ];
 
   return (
     <div className="min-h-screen pt-20">
       <div className="max-w-7xl mx-auto px-4 py-16">
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            transition={{duration: 0.5}}
         >
           <h2 className="text-3xl font-bold mb-8">About Me</h2>
           <div className="grid md:grid-cols-2 gap-12">
@@ -48,20 +61,21 @@ const About = () => {
                 When I'm not coding, im still learning new things in development field.
               </p>
               <p className="mb-4 font-bold">
-                (all of the content and the functions that are displayed here just for showcase and can be enhanced or changed in any possible way)
+                (all of the content and the functions that are displayed here just for showcase and can be enhanced or
+                changed in any possible way)
               </p>
             </div>
             <div>
               <h3 className="text-xl font-bold mb-4">Skills & Technologies</h3>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {skills.map((skill, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center gap-2 text-textSecondary"
-                  >
-                    <span className="text-secondary">▹</span>
-                    {skill}
-                  </div>
+                    <div
+                        key={index}
+                        className="flex items-center gap-2 text-textSecondary"
+                    >
+                      <span className="text-secondary">▹</span>
+                      {skill}
+                    </div>
                 ))}
               </div>
             </div>
@@ -89,6 +103,37 @@ const About = () => {
                 </a>
               </div>
             </div>
+          </div>
+
+          <div className="mt-10">
+            <button
+                onClick={() => setHobbiesOpen(!hobbiesOpen)}
+                className="w-full text-left bg-primary border border-secondary p-4 rounded-lg shadow-lg transition-colors hover:text-white"
+            >
+              <h3 className="text-xl font-bold flex items-center">
+                Hobbies
+                <span className={`ml-2 transition-transform ${hobbiesOpen ? "rotate-180" : ""}`}>
+                  ▼
+                </span>
+              </h3>
+            </button>
+            {hobbiesOpen && (
+                <motion.ul
+                    initial={{opacity: 0, height: 0}}
+                    animate={{opacity: 1, height: "auto"}}
+                    exit={{opacity: 0, height: 0}}
+                    transition={{duration: 0.5}}
+                    className="list-disc list-inside mt-4 pl-6 space-y-2 text-textSecondary"
+                >
+                  {hobbies.map((hobby, index) => (
+                      <li key={index}>{hobby}</li>
+                  ))}
+                </motion.ul>
+            )}
+          </div>
+
+          <div className="mt-16">
+            <GitHubStats/>
           </div>
         </motion.div>
       </div>

@@ -32,6 +32,14 @@ export const projectsData = [
         image: '/aaw.png'
     },
     {
+        title: 'Nft advertisement',
+        description: 'An Advertisement website for a NFT collection, its main developers and why its created',
+        tech: ['React', 'JavaScript', 'Tailwind CSS'],
+        github: 'https://github.com/YpCIIIaK/nft-add',
+        demo: 'https://github.com/YpCIIIaK/nft-add',
+        image: '/naw.png'
+    },
+    {
         title: 'This Website LOL',
         description: 'A all in one portfolio-blog-components website',
         tech: ['React', 'JavaScript', 'Tailwind CSS', 'CSS', 'Markdown'],
