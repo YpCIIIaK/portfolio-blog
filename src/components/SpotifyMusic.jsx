@@ -1,7 +1,7 @@
 const SpotifyMusic = () => {
     return (
         <div className="mt-6">
-            <h4 className="text-lg font-bold mb-4">One of the Favorite Tracks</h4>
+            <h4 className="text-lg font-bold mb-4">Some of my Favorite Tracks</h4>
             <div className="flex flex-wrap gap-4">
                 <iframe
                     src="https://open.spotify.com/embed/track/1T8Wf6c2AWWYNdc7tFAhzX?utm_source=generator"
