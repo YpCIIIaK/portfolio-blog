@@ -2,6 +2,8 @@ import { motion } from 'framer-motion';
 import GitHubStats from "../components/GithubStats.jsx";
 import { useState } from "react";
 import SpotifyMusic from "../components/SpotifyMusic.jsx";
+import Chart from "../components/Chart.jsx";
+import data from "../data/chartData.json";
 
 const About = () => {
   const [hobbiesOpen, setHobbiesOpen] = useState(false);
@@ -147,6 +149,11 @@ const About = () => {
 
             <div className="mt-10">
               <GitHubStats />
+            </div>
+
+            <div>
+              <h3 className="mt-10 text-xl font-bold transition-colors mb-2">Here is an example of a chart created with d3 js library</h3>
+              <Chart data={data} />
             </div>
           </motion.div>
         </div>
