@@ -6,7 +6,8 @@ import Chart from "../components/Chart.jsx";
 import data from "../data/chartData.json";
 
 const About = () => {
-  const [hobbiesOpen, setHobbiesOpen] = useState(false);
+  const [hobbiesOpen1, setHobbiesOpen1] = useState(false);
+  const [hobbiesOpen2, setHobbiesOpen2] = useState(false);
 
   const skills = [
     'JavaScript (ES6+)',
@@ -47,9 +48,9 @@ const About = () => {
       <div className="min-h-screen pt-20">
         <div className="max-w-7xl mx-auto px-4 py-16">
           <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5 }}
+              initial={{opacity: 0}}
+              animate={{opacity: 1}}
+              transition={{duration: 0.5}}
           >
             <h2 className="text-3xl font-bold mb-8">About Me</h2>
             <div className="grid md:grid-cols-2 gap-12">
@@ -68,7 +69,8 @@ const About = () => {
                   When I'm not coding, I'm still learning new things in the development field.
                 </p>
                 <p className="mb-4 font-bold">
-                  (All of the content and the functions that are displayed here are just for showcase and can be enhanced or
+                  (All of the content and the functions that are displayed here are just for showcase and can be
+                  enhanced or
                   changed in any possible way.)
                 </p>
               </div>
@@ -116,45 +118,72 @@ const About = () => {
 
             <div className="mt-10">
               <button
-                  onClick={() => setHobbiesOpen(!hobbiesOpen)}
+                  onClick={() => setHobbiesOpen1(!hobbiesOpen1)}
                   className="w-full text-left bg-primary border border-secondary p-4 rounded-lg shadow-lg transition-colors hover:text-white"
               >
                 <h3 className="text-xl font-bold flex items-center">
                   Hobbies
                   <span
                       className={`ml-2 transition-transform ${
-                          hobbiesOpen ? "rotate-180" : ""
+                          hobbiesOpen1 ? "rotate-180" : ""
                       }`}
                   >
                   ▼
                 </span>
                 </h3>
               </button>
-              {hobbiesOpen && (
+              {hobbiesOpen1 && (
                   <motion.div
-                      initial={{ opacity: 0, height: 0 }}
-                      animate={{ opacity: 1, height: "auto" }}
-                      exit={{ opacity: 0, height: 0 }}
-                      transition={{ duration: 0.5 }}
+                      initial={{opacity: 0, height: 0}}
+                      animate={{opacity: 1, height: "auto"}}
+                      exit={{opacity: 0, height: 0}}
+                      transition={{duration: 0.5}}
                   >
                     <ul className="list-disc list-inside mt-4 pl-6 space-y-2 text-textSecondary">
                       {hobbies.map((hobby, index) => (
                           <li key={index}>{hobby}</li>
                       ))}
                     </ul>
-                    <SpotifyMusic />
+                    <SpotifyMusic/>
                   </motion.div>
               )}
             </div>
 
             <div className="mt-10">
-              <GitHubStats />
+              <GitHubStats/>
             </div>
 
-            <div>
-              <h3 className="mt-10 text-xl font-bold transition-colors mb-2">Here is an example of a chart created with d3 js library</h3>
-              <Chart data={data} />
+            <div className="mt-10">
+              <button
+                  onClick={() => setHobbiesOpen2(!hobbiesOpen2)}
+                  className="w-full text-left bg-primary border border-secondary p-4 rounded-lg shadow-lg transition-colors hover:text-white"
+              >
+                <h3 className="text-xl font-bold flex items-center">
+                  Here is an example of a chart created with
+                  d3 js library
+                  <span
+                      className={`ml-2 transition-transform ${
+                          hobbiesOpen2 ? "rotate-180" : ""
+                      }`}
+                  >
+                  ▼
+                </span>
+                </h3>
+              </button>
+              {hobbiesOpen2 && (
+                  <motion.div
+                      initial={{opacity: 0, height: 0}}
+                      animate={{opacity: 1, height: "auto"}}
+                      exit={{opacity: 0, height: 0}}
+                      transition={{duration: 0.5}}
+                  >
+
+                    <Chart data={data}/>
+                  </motion.div>
+              )}
             </div>
+
+            <h4 className="text-sm font-bold flex items-center">(idk where to put this)</h4>
           </motion.div>
         </div>
       </div>
