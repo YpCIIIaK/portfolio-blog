@@ -1,0 +1,29 @@
+{
+  "name": "This website",
+  "children": [
+    {
+      "name": "Skeleton",
+      "children": [
+        { "name": "React" },
+        { "name": "JavaScript" }
+      ]
+    },
+    {
+      "name": "Styling",
+      "children": [
+        { "name": "Tailwind CSS" },
+        { "name": "CSS" },
+        { "name": "MotionDiv" }
+      ]
+    },
+    {
+      "name": "Additions",
+      "children": [
+        { "name": "D3 JS" },
+        { "name": "GitHub API" },
+        { "name": "Spotify widgets" },
+        { "name": "Markdown" }
+      ]
+    }
+  ]
+}
