@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { LanguageProvider } from './contexts/LanguageContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -14,6 +15,7 @@ import ScriptLoader from './ScriptLoader';
 
 function App() {
   return (
+    <LanguageProvider>
       <Router>
         <div className="bg-primary min-h-screen text-textPrimary">
           <ScrollToTop />
@@ -34,6 +36,7 @@ function App() {
           <Footer />
         </div>
       </Router>
+    </LanguageProvider>
   );
 }
 

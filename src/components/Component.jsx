@@ -4,13 +4,25 @@ import { componentsPages } from "../data/componentsPages.js";
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { useLanguage } from '../contexts/LanguageContext';
+import { useComponentsData, useTranslations } from '../locales/translations';
 
 const Component = () => {
     const { componentId } = useParams();
-    const componentData = componentsPages.find(page => page.link === componentId);
+    const { language } = useLanguage();
+    const translatedComponents = useComponentsData(language);
+    const t = useTranslations(language);
+    
+    // Сначала ищем переведённые данные
+    let componentData = translatedComponents.find(page => page.link === componentId);
+    
+    // Если не найдены переведённые данные, используем оригинальные
+    if (!componentData) {
+        componentData = componentsPages.find(page => page.link === componentId);
+    }
 
     if (!componentData) {
-        return <div>Component not found</div>;
+        return <div>{t.components.notFound}</div>;
     }
 
     const { render: RenderedComponent } = componentData;
@@ -48,7 +60,7 @@ const Component = () => {
             </div>
             {RenderedComponent && (
                 <div className="mt-4">
-                    <h2 className="text-xl font-semibold mb-5">Rendered Component:</h2>
+                    <h2 className="text-xl font-semibold mb-5">{t.components.renderedComponent}</h2>
                     <RenderedComponent />
                 </div>
             )}

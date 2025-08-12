@@ -5,18 +5,30 @@ import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { FaArrowLeft } from 'react-icons/fa';
+import { useLanguage } from '../contexts/LanguageContext';
+import { useTranslations, useBlogData } from '../locales/translations';
 
 const BlogPost = () => {
   const { slug } = useParams();
-  const post = blogPosts.find(post => post.slug === slug);
+  const { language } = useLanguage();
+  const t = useTranslations(language);
+  const translatedBlogPosts = useBlogData(language);
+  
+  // Сначала ищем переведённый пост
+  let post = translatedBlogPosts.find(post => post.slug === slug);
+  
+  // Если не найден переведённый пост, используем оригинальный
+  if (!post) {
+    post = blogPosts.find(post => post.slug === slug);
+  }
 
   if (!post) {
     return (
       <div className="min-h-screen pt-20">
         <div className="max-w-3xl mx-auto px-4 py-16">
-          <h2 className="text-2xl font-bold mb-4">Post not found</h2>
+          <h2 className="text-2xl font-bold mb-4">{t.blog.postNotFound}</h2>
           <Link to="/blog" className="text-secondary hover:underline">
-            ← Back to Blog
+            {t.blog.backToBlog}
           </Link>
         </div>
       </div>
@@ -35,7 +47,7 @@ const BlogPost = () => {
             to="/blog"
             className="inline-flex items-center text-secondary hover:underline mb-8"
           >
-            <FaArrowLeft className="mr-2" /> Back to Blog
+            <FaArrowLeft className="mr-2" /> {t.blog.backToBlog.replace('←', '').trim()}
           </Link>
           
           <article className="prose prose-invert prose-secondary max-w-none">

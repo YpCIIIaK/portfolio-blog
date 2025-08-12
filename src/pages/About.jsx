@@ -4,10 +4,15 @@ import { useState } from "react";
 import SpotifyMusic from "../components/SpotifyMusic.jsx";
 import Chart from "../components/Chart.jsx";
 import data from "../data/chartData.json";
+import { useLanguage } from '../contexts/LanguageContext';
+import { useTranslations, useHobbiesData } from '../locales/translations';
 
 const About = () => {
   const [hobbiesOpen1, setHobbiesOpen1] = useState(false);
   const [hobbiesOpen2, setHobbiesOpen2] = useState(false);
+  const { language } = useLanguage();
+  const t = useTranslations(language);
+  const hobbies = useHobbiesData(language);
 
   const skills = [
     'JavaScript (ES6+)',
@@ -36,13 +41,7 @@ const About = () => {
     'APIs',
   ];
 
-  const hobbies = [
-    "Basketball",
-    "Skiing",
-    "Computer games",
-    "Board games",
-    "Building blocks",
-  ];
+
 
   return (
       <div className="min-h-screen pt-20">
@@ -52,30 +51,24 @@ const About = () => {
               animate={{opacity: 1}}
               transition={{duration: 0.5}}
           >
-            <h2 className="text-3xl font-bold mb-8">About Me</h2>
+            <h2 className="text-3xl font-bold mb-8">{t.about.title}</h2>
             <div className="grid md:grid-cols-2 gap-12">
               <div className="text-textSecondary">
                 <p className="mb-4">
-                  Hello! I'm Vladimir, a frontend developer with a passion for creating
-                  beautiful and functional web applications. My journey in web development
-                  began during my school years, and I've been hooked ever since.
+                  {t.about.description.p1}
                 </p>
                 <p className="mb-4">
-                  I specialize in React and its ecosystem, building responsive and
-                  performant web applications. I love working with modern JavaScript
-                  and staying up-to-date with the latest web technologies.
+                  {t.about.description.p2}
                 </p>
                 <p className="mb-4">
-                  When I'm not coding, I'm still learning new things in the development field.
+                  {t.about.description.p3}
                 </p>
                 <p className="mb-4 font-bold">
-                  (All of the content and the functions that are displayed here are just for showcase and can be
-                  enhanced or
-                  changed in any possible way.)
+                  {t.about.description.p4}
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-4">Skills & Technologies</h3>
+                <h3 className="text-xl font-bold mb-4">{t.about.skillsTitle}</h3>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   {skills.map((skill, index) => (
                       <div
@@ -92,7 +85,7 @@ const About = () => {
 
             <div className="mt-10">
               <h3 className="text-xl font-bold transition-colors mb-2">
-                My CV in PDF Format that you can download
+                {t.about.cvTitle}
               </h3>
               <div>
                 <div>
@@ -101,7 +94,7 @@ const About = () => {
                       download="CV_Vladimirov_Vladimir.pdf"
                       className="text-md font-bold hover:text-secondary transition-colors"
                   >
-                    Download My CV EN
+                    {t.about.cvDownload.en}
                   </a>
                 </div>
                 <div>
@@ -110,7 +103,7 @@ const About = () => {
                       download="Резюме_Владимиров_Владимир.pdf"
                       className="text-md font-bold hover:text-secondary transition-colors"
                   >
-                    Download My CV RU
+                    {t.about.cvDownload.ru}
                   </a>
                 </div>
               </div>
@@ -122,7 +115,7 @@ const About = () => {
                   className="w-full text-left bg-primary border border-secondary p-4 rounded-lg shadow-lg transition-colors hover:text-white"
               >
                 <h3 className="text-xl font-bold flex items-center">
-                  Hobbies
+                  {t.about.hobbies}
                   <span
                       className={`ml-2 transition-transform ${
                           hobbiesOpen1 ? "rotate-180" : ""
@@ -159,8 +152,7 @@ const About = () => {
                   className="w-full text-left bg-primary border border-secondary p-4 rounded-lg shadow-lg transition-colors hover:text-white"
               >
                 <h3 className="text-xl font-bold flex items-center">
-                  Here is an example of a chart created with
-                  d3 js library
+                  {t.about.chartTitle}
                   <span
                       className={`ml-2 transition-transform ${
                           hobbiesOpen2 ? "rotate-180" : ""
@@ -183,7 +175,7 @@ const About = () => {
               )}
             </div>
 
-            <h4 className="text-sm font-bold flex items-center">(idk where to put this)</h4>
+            <h4 className="text-sm font-bold flex items-center">{t.about.note}</h4>
           </motion.div>
         </div>
       </div>

@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import {AnimatePresence, motion} from 'framer-motion';
+import { useLanguage } from '../contexts/LanguageContext';
+import { useTranslations } from '../locales/translations';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +10,8 @@ const Contact = () => {
     message: ''
   });
   const [showNotification, setShowNotification] = useState(false);
+  const { language } = useLanguage();
+  const t = useTranslations(language);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -31,7 +35,7 @@ const Contact = () => {
         })
         .catch((error) => {
           console.error('Error:', error);
-          alert('Failed to send the message.');
+          alert(t.contact.error);
         });
   };
 
@@ -50,15 +54,13 @@ const Contact = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl font-bold mb-4">Get In Touch</h2>
+            <h2 className="text-3xl font-bold mb-4">{t.contact.title}</h2>
             <p className="text-textSecondary mb-8">
-              I'm currently open for freelance opportunities and interesting projects.
-              Whether you have a question or just want to say hi, I'll try my best
-              to get back to you! (Just fill the form and press the button below)
+              {t.contact.description}
             </p>
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-textSecondary mb-2">Name</label>
+                <label htmlFor="name" className="block text-textSecondary mb-2">{t.contact.form.name}</label>
                 <input
                     type="text"
                     id="name"
@@ -70,7 +72,7 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-textSecondary mb-2">Email</label>
+                <label htmlFor="email" className="block text-textSecondary mb-2">{t.contact.form.email}</label>
                 <input
                     type="email"
                     id="email"
@@ -82,7 +84,7 @@ const Contact = () => {
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-textSecondary mb-2">Message</label>
+                <label htmlFor="message" className="block text-textSecondary mb-2">{t.contact.form.message}</label>
                 <textarea
                     id="message"
                     name="message"
@@ -97,7 +99,7 @@ const Contact = () => {
                   type="submit"
                   className="bg-secondary hover:bg-secondary/90 text-primary px-8 py-3 rounded transition-colors"
               >
-                Send Message
+                {t.contact.form.send}
               </button>
             </form>
           </motion.div>
@@ -112,7 +114,7 @@ const Contact = () => {
                   transition={{ duration: 0.5 }}
                   className="fixed bottom-4 right-4 bg-secondary text-primary px-6 py-3 rounded shadow-lg"
               >
-                Message sent successfully!
+                {t.contact.success}
               </motion.div>
           )}
         </AnimatePresence>
